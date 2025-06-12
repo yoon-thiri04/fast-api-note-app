@@ -20,6 +20,8 @@ This is a simple backend testing project built with **FastAPI**, **MongoDB**, an
    uvicorn app.main:app --reload
 
 ##  📁 Project Stucture 
+
+```
 📁 app/
 ├── 📁 crud/
 │   ├── user.py
@@ -36,8 +38,9 @@ This is a simple backend testing project built with **FastAPI**, **MongoDB**, an
 ├── db.py
 ├── main.py
 └── config.py
-├── requirements.txt
-├── README.md
-└── .env
+requirements.txt
+README.md
+.env
+```
 
 
