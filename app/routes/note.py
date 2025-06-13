@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, status,Depends
 from app.models.note import NoteCreate, NoteResponse,NoteUpdate
 from app.utils.authentication import get_current_user
 from app.crud.note import create_note, get_note, get_notes, update_note, delete_note
-router = APIRouter(prefix="/notes")
+router = APIRouter(prefix="/notes", tags=["Note CRUD"])
 
 @router.post("/", response_model=dict)
 async def create_note_app(note:NoteCreate, current_user=Depends(get_current_user)):
@@ -27,8 +27,6 @@ async def get_notes_api( current_user=Depends(get_current_user)):
 
 @router.put("/{note_id}",response_model=dict)
 async def update_note_api(note_id:str,note:NoteUpdate,current_user=Depends(get_current_user)):
-
-    
     updated = await update_note(note_id,note, current_user["id"])
 
     if not updated:

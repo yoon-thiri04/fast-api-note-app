@@ -4,7 +4,7 @@ from app.crud.user import register_user,get_user_by_email
 from app.utils.password import verify
 from app.utils.authentication import generate_jwt_token
 
-router = APIRouter(prefix= "")
+router = APIRouter(prefix= "", tags=["Authentication"])
 
 @router.post("/register")
 async def register(user:UserRegister):
